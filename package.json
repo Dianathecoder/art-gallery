@@ -1,0 +1,13 @@
+{
+  "name": "art-gallery",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm:dev:frontend\" \"npm:dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run develop"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
+
