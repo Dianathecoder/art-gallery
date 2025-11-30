@@ -12,8 +12,8 @@ export default function Gallery() {
   const [filters, setFilters] = useState({
     category: "all",
     author: "all",
-    date: "all", // podrías usar rangos
-    title: "", // búsqueda por texto
+    date: "all",
+    title: "",
   });
 
   const [categories, setCategories] = useState([
@@ -34,7 +34,6 @@ export default function Gallery() {
       setLoading(true);
       try {
         const res = await axios.get(`${API}/api/galleries?populate=image`);
-        // strapi returns data array: map to simpler object
         const items = res.data.data.map((item) => {
           const attr = item;
           const imgData = attr.image ?? null;
